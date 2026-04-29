@@ -58,20 +58,20 @@ export default function Home() {
   };
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-base-50 to-gray-50'>
+    <div className="min-h-screen bg-gradient-to-br from-base-50 to-gray-50">
       {/* Header */}
-      <header className='bg-white shadow-sm sticky top-0 z-40'>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4'>
-          <div className='flex items-center justify-between'>
-            <div className='flex items-center gap-3'>
-              <div className='text-3xl'>🚀</div>
+      <header className="bg-white shadow-sm sticky top-0 z-40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="text-3xl">🚀</div>
               <div>
-                <h1 className='text-2xl font-bold text-gray-900'>NFT Base</h1>
-                <p className='text-xs text-gray-600'>Free Mint NFT Discovery Platform</p>
+                <h1 className="text-2xl font-bold text-gray-900">NFT Base</h1>
+                <p className="text-xs text-gray-600">Free Mint NFT Discovery Platform</p>
               </div>
             </div>
-            <div className='flex items-center gap-2'>
-              <span className='hidden sm:inline-block px-3 py-1 bg-base-500 text-white rounded-full text-sm font-semibold'>
+            <div className="flex items-center gap-2">
+              <span className="hidden sm:inline-block px-3 py-1 bg-base-500 text-white rounded-full text-sm font-semibold">
                 Base Chain
               </span>
             </div>
@@ -80,35 +80,35 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Stats Section */}
         <Stats stats={stats} />
 
         {/* Filters and Projects Grid */}
-        <div className='grid grid-cols-1 lg:grid-cols-4 gap-6'>
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* Sidebar Filters */}
-          <div className='lg:col-span-1'>
-            <div className='sticky top-20'>
+          <div className="lg:col-span-1">
+            <div className="sticky top-20">
               <Filters onFilterChange={handleFilterChange} />
             </div>
           </div>
 
           {/* Projects Grid */}
-          <div className='lg:col-span-3'>
+          <div className="lg:col-span-3">
             {loading ? (
-              <div className='flex items-center justify-center py-12'>
-                <div className='text-center'>
-                  <div className='animate-spin text-4xl mb-4'>⏳</div>
-                  <p className='text-gray-600'>Loading NFT projects...</p>
+              <div className="flex items-center justify-center py-12">
+                <div className="text-center">
+                  <div className="animate-spin text-4xl mb-4">⏳</div>
+                  <p className="text-gray-600">Loading NFT projects...</p>
                 </div>
               </div>
             ) : filteredProjects.length > 0 ? (
               <div>
-                <p className='text-sm text-gray-600 mb-4'>
-                  Showing <span className='font-semibold'>{filteredProjects.length}</span> of{' '}
-                  <span className='font-semibold'>{projects.length}</span> projects
+                <p className="text-sm text-gray-600 mb-4">
+                  Showing <span className="font-semibold">{filteredProjects.length}</span> of
+                  <span className="font-semibold ml-1">{projects.length}</span> projects
                 </p>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {filteredProjects.map(project => (
                     <NFTCard
                       key={project.id}
@@ -119,10 +119,10 @@ export default function Home() {
                 </div>
               </div>
             ) : (
-              <div className='flex items-center justify-center py-12 bg-white rounded-lg border-2 border-dashed border-gray-300'>
-                <div className='text-center'>
-                  <div className='text-4xl mb-4'>🔍</div>
-                  <p className='text-gray-600'>No projects found matching your filters</p>
+              <div className="flex items-center justify-center py-12 bg-white rounded-lg border-2 border-dashed border-gray-300">
+                <div className="text-center">
+                  <div className="text-4xl mb-4">🔍</div>
+                  <p className="text-gray-600">No projects found matching your filters</p>
                 </div>
               </div>
             )}
@@ -132,16 +132,13 @@ export default function Home() {
 
       {/* Detail Modal */}
       {selectedProject && (
-        <NFTDetail
-          project={selectedProject}
-          onClose={() => setSelectedProject(null)}
-        />
+        <NFTDetail project={selectedProject} onClose={() => setSelectedProject(null)} />
       )}
 
       {/* Footer */}
-      <footer className='bg-white border-t border-gray-200 mt-12'>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
-          <div className='text-center text-gray-600 text-sm'>
+      <footer className="bg-white border-t border-gray-200 mt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="text-center text-gray-600 text-sm">
             <p>
               NFT Base • Discover free mint NFT projects on Base chain • Built with ❤️ for the
               community
